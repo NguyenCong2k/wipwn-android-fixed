@@ -14,7 +14,9 @@ if [ -z "${PY:-}" ]; then
 fi
 
 if [ "$(id -u)" = "0" ]; then
+    export PATH="${PREFIX:-/data/data/com.termux/files/usr}/bin:$PATH"
     exec "$PY" main_clean.py -i wlan0 -K
 fi
 
-exec su -c "cd '$PWD' && '$PY' main_clean.py -i wlan0 -K"
+# su starts a fresh environment; pass Termux's bin directory explicitly.
+exec su -c "export PATH='${PREFIX:-/data/data/com.termux/files/usr}/bin:\$PATH'; cd '$PWD' && '$PY' main_clean.py -i wlan0 -K"
