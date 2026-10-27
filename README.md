@@ -74,6 +74,7 @@ Nếu không phải `wlan0`, thay bằng tên thật, ví dụ `wlan1`.
 | `Device or resource busy (-16)` | Tắt/bật lại Wi-Fi |
 | `su: not found` | Máy chưa root hoặc chưa cấp quyền root cho Termux |
 | `wpa_supplicant: not found` | Cài `pkg install wpa-supplicant -y`, và chạy `./wipwn.sh` bản mới (đã set PATH cho `su`) |
+| `Read-only file system: '//.wipwn'` | Chạy `./wipwn.sh` bản mới, hoặc set `HOME` về Termux home trước khi chạy `su` |
 | Không thấy mạng WPS | Bật Location, tắt hotspot, bật Wi-Fi |
 
 ## Ghi chú
